@@ -21,20 +21,6 @@ app.use(bodyParser.json());
 /*------------------------------------------- main process ------------------------------*/
 mongoose.connect('mongodb://' + config.db.mongo.host + '/' + config.db.mongo.db);
 
-/*mongoose.connection.on('connected', function (err, db) {
-    console.log(new Date() +' @ MongoDB: Successfully connected to: ' + 'mongodb://'+config.db.mongo.host+'/'+config.db.mongo.db);
-    getGCMTokens(db, function(tokens){ // Get Tokens
-        delete doc._id;
-        db.collection('notifications', function(err, collection) { // Save doc in DB
-            collection.insert(doc, function(err, result) {
-                console.log('Saved Doc - status:', err, '| Sending notification: ', doc);
-                sendNotification(doc, tokens); // Send Notification
-            });
-        });
-    });
-
-});*/
-
 app.post('/sendNotification',function(req) {
     console.log('req.body============', req.body)
     var notification = {
@@ -79,7 +65,6 @@ function sendalldocs(alldocs) {
     getGcmToken(alldocs);
 
 }
-
 
 function sendNotification(userdoc,alldocs,tokens) {
 
