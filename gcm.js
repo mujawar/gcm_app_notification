@@ -32,7 +32,7 @@ app.post('/sendNotification',function(req) {
             text:req.body.message.text
 
         },
-        messageType: 'MDX_PROMOTION',
+        messageType: 'APP_PROMOTION',
         userIds: req.body.userIds,
 
     };
@@ -74,7 +74,7 @@ function sendNotification(userdoc,alldocs,tokens) {
         var sender = new gcm.Sender(/*insert ur token gere*/);
         if (alldocs && alldocs.message) {
             var message = new gcm.Message({
-                collapseKey: 'Medibox',
+                collapseKey: 'NAME',
                 delayWhileIdle: true,
                 timeToLive: 3000,
                 data: {title: alldocs.message.title, message: alldocs.message.text}
