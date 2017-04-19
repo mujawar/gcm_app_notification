@@ -1,5 +1,4 @@
 'use strict';
-
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
@@ -43,7 +42,6 @@ app.post('/sendNotification',function(req) {
        // publishers.publishMessageToChannel({channelName: 'NFS_CHANNEL', messageID: newNotification._id});
     });
 });
-
 
 function getGcmToken(alldocs) {
     var users = [];
