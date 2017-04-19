@@ -18,5 +18,6 @@
     "email-templates": "latest",
     "nodemailer": "latest",
     "handlebars": "latest"
+
   }
 }
