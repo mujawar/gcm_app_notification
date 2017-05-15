@@ -43,6 +43,7 @@ app.post('/sendNotification',function(req) {
     });
 });
 
+
 function getGcmToken(alldocs) {
     var users = [];
     console.log('alldocs',alldocs.userIds);
@@ -63,7 +64,6 @@ function sendalldocs(alldocs) {
     getGcmToken(alldocs);
 
 }
-
 function sendNotification(userdoc,alldocs,tokens) {
 
         console.log('callinf sendNotification userdoc--------' + JSON.stringify(userdoc));
